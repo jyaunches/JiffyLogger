@@ -1,0 +1,22 @@
+PODS:
+  - Kiwi (2.4.0)
+  - ObjectiveSugar (1.1.0)
+
+DEPENDENCIES:
+  - Kiwi (from `https://github.com/kiwi-bdd/Kiwi.git`)
+  - ObjectiveSugar
+
+EXTERNAL SOURCES:
+  Kiwi:
+    :git: https://github.com/kiwi-bdd/Kiwi.git
+
+CHECKOUT OPTIONS:
+  Kiwi:
+    :commit: ae9f6d83faf774754ea60a9dfc6556eb23800f47
+    :git: https://github.com/kiwi-bdd/Kiwi.git
+
+SPEC CHECKSUMS:
+  Kiwi: 51179d0c9cd4f1f80afb0e113e1fea67b1af68f1
+  ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
+
+COCOAPODS: 0.35.0
