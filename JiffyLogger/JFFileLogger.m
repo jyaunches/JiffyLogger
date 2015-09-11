@@ -8,20 +8,25 @@
 
 #import <ObjectiveSugar/ObjectiveSugar.h>
 #import "JFFileLogger.h"
+#import "NSDate+JFLogging.h"
 
 @interface JFFileLogger ()
-@property(nonatomic, copy) NSString *directory;
 @property(nonatomic, strong) NSMutableArray *logQueue;
 @property(nonatomic, strong) NSString *const separator;
+@property(nonatomic) BOOL withTimestamps;
+@property(nonatomic, copy) NSString *filename;
 @end
+
+NSString *const LOG_DIRECTORY = @"jiffy_logs";
 
 @implementation JFFileLogger
 
-- (id)initWithDirectory:(NSString *)directory andSeparator:(NSString *const)separator {
+- (id)initWithFileName:(NSString *)filename andSeparator:(NSString *const)separator withTimestamps:(BOOL)withTimestamps {
     self = [super init];
-    self.directory = directory;
     self.separator = separator;
+    self.filename = filename;
     self.logQueue = [NSMutableArray array];
+    self.withTimestamps = withTimestamps;
     [self createLogFile];
     return self;
 }
@@ -34,7 +39,7 @@
     }
 }
 
-- (void)logThis:(NSString *)firstArg, ...{
+- (void)log:(NSString *)firstArg, ...{
     NSMutableArray *theArgs = [NSMutableArray array];
 
     va_list args;
@@ -57,14 +62,13 @@
     }
 
     va_end(args);
-    [self.logQueue addObject:theLog];
-    if (self.logQueue.count >= 50) {
-        [self writeQueued];
-    }
-}
 
-- (void)log:(NSString *)logText {
-    [self.logQueue addObject:logText];
+    if(self.withTimestamps){
+        theLog = [NSString stringWithFormat:@"%@ - %@", [NSDate nowForLogs], theLog];
+    }
+
+    [self.logQueue addObject:theLog];
+
     if (self.logQueue.count >= 50) {
         [self writeQueued];
     }
@@ -105,5 +109,11 @@
         [fileHandle writeData:data];
         [fileHandle closeFile];
     });
+}
+
+- (NSString *)directory{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = paths[0];
+    return [NSString stringWithFormat:@"%@/%@/%@", documentsDirectory, LOG_DIRECTORY, self.filename];
 }
 @end

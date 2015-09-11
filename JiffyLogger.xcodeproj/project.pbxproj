@@ -17,6 +17,13 @@
 		70AB52E21BA0A4EB008D50BF /* JFFileLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AB52E11BA0A4EB008D50BF /* JFFileLoggerSpec.m */; };
 		70AB52E61BA0A4FC008D50BF /* JFFileLogger+DependencyInjection.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AB52E51BA0A4FC008D50BF /* JFFileLogger+DependencyInjection.m */; };
 		70AB52E91BA0A50C008D50BF /* JFFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AB52E71BA0A50C008D50BF /* JFFileLogger.m */; };
+		70AB52EE1BA0A7EC008D50BF /* JFCommunicationLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AB52EA1BA0A7EC008D50BF /* JFCommunicationLogger.m */; };
+		70AB52EF1BA0A7EC008D50BF /* GTLoggingActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AB52ED1BA0A7EC008D50BF /* GTLoggingActionManager.m */; };
+		70AB52F31BA0AA04008D50BF /* NSDate+JFLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AB52F21BA0AA04008D50BF /* NSDate+JFLogging.m */; };
+		70AB52F51BA324B9008D50BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB52F41BA324B9008D50BF /* UIKit.framework */; };
+		70AB52F71BA324BF008D50BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB52F61BA324BF008D50BF /* Foundation.framework */; };
+		70AB52FA1BA328EF008D50BF /* JFEmailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AB52F91BA328EF008D50BF /* JFEmailer.m */; };
+		70AB52FC1BA32939008D50BF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70AB52FB1BA32939008D50BF /* MessageUI.framework */; };
 		D94E18DEBEDBF92A2DA03481 /* libPods-JiffyLoggerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D73F7B49E2127163E738BF0 /* libPods-JiffyLoggerTests.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +57,18 @@
 		70AB52E51BA0A4FC008D50BF /* JFFileLogger+DependencyInjection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "JFFileLogger+DependencyInjection.m"; path = "Helpers/JFFileLogger+DependencyInjection.m"; sourceTree = "<group>"; };
 		70AB52E71BA0A50C008D50BF /* JFFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFileLogger.m; sourceTree = "<group>"; };
 		70AB52E81BA0A50C008D50BF /* JFFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFFileLogger.h; sourceTree = "<group>"; };
+		70AB52EA1BA0A7EC008D50BF /* JFCommunicationLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFCommunicationLogger.m; sourceTree = "<group>"; };
+		70AB52EB1BA0A7EC008D50BF /* JFCommunicationLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFCommunicationLogger.h; sourceTree = "<group>"; };
+		70AB52EC1BA0A7EC008D50BF /* GTLoggingActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLoggingActionManager.h; sourceTree = "<group>"; };
+		70AB52ED1BA0A7EC008D50BF /* GTLoggingActionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLoggingActionManager.m; sourceTree = "<group>"; };
+		70AB52F01BA0A930008D50BF /* JFLogExportProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFLogExportProtocol.h; sourceTree = "<group>"; };
+		70AB52F11BA0AA04008D50BF /* NSDate+JFLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JFLogging.h"; sourceTree = "<group>"; };
+		70AB52F21BA0AA04008D50BF /* NSDate+JFLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JFLogging.m"; sourceTree = "<group>"; };
+		70AB52F41BA324B9008D50BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		70AB52F61BA324BF008D50BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		70AB52F81BA328EF008D50BF /* JFEmailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFEmailer.h; sourceTree = "<group>"; };
+		70AB52F91BA328EF008D50BF /* JFEmailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFEmailer.m; sourceTree = "<group>"; };
+		70AB52FB1BA32939008D50BF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B735113F63F78448E49271A8 /* Pods-JiffyLoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiffyLoggerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JiffyLoggerTests/Pods-JiffyLoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C36A02BF1C3E4F54954706A0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96A374811ABF9D999500BAD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70AB52FC1BA32939008D50BF /* MessageUI.framework in Frameworks */,
+				70AB52F71BA324BF008D50BF /* Foundation.framework in Frameworks */,
+				70AB52F51BA324B9008D50BF /* UIKit.framework in Frameworks */,
 				1E69BB7D0AEFEBEBB0F84F0F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +121,12 @@
 		70AB52BA1BA0A214008D50BF /* JiffyLogger */ = {
 			isa = PBXGroup;
 			children = (
+				70AB52F81BA328EF008D50BF /* JFEmailer.h */,
+				70AB52F91BA328EF008D50BF /* JFEmailer.m */,
+				70AB52EA1BA0A7EC008D50BF /* JFCommunicationLogger.m */,
+				70AB52EB1BA0A7EC008D50BF /* JFCommunicationLogger.h */,
+				70AB52EC1BA0A7EC008D50BF /* GTLoggingActionManager.h */,
+				70AB52ED1BA0A7EC008D50BF /* GTLoggingActionManager.m */,
 				70AB52E71BA0A50C008D50BF /* JFFileLogger.m */,
 				70AB52E81BA0A50C008D50BF /* JFFileLogger.h */,
 				70AB52BF1BA0A214008D50BF /* AppDelegate.h */,
@@ -109,6 +137,9 @@
 				70AB52C81BA0A214008D50BF /* Images.xcassets */,
 				70AB52CA1BA0A214008D50BF /* LaunchScreen.xib */,
 				70AB52BB1BA0A214008D50BF /* Supporting Files */,
+				70AB52F01BA0A930008D50BF /* JFLogExportProtocol.h */,
+				70AB52F11BA0AA04008D50BF /* NSDate+JFLogging.h */,
+				70AB52F21BA0AA04008D50BF /* NSDate+JFLogging.m */,
 			);
 			path = JiffyLogger;
 			sourceTree = "<group>";
@@ -163,6 +194,9 @@
 		D7387A4D7DFADA219C07F595 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70AB52FB1BA32939008D50BF /* MessageUI.framework */,
+				70AB52F61BA324BF008D50BF /* Foundation.framework */,
+				70AB52F41BA324B9008D50BF /* UIKit.framework */,
 				C36A02BF1C3E4F54954706A0 /* libPods.a */,
 				3D73F7B49E2127163E738BF0 /* libPods-JiffyLoggerTests.a */,
 			);
@@ -336,8 +370,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70AB52EF1BA0A7EC008D50BF /* GTLoggingActionManager.m in Sources */,
 				70AB52E91BA0A50C008D50BF /* JFFileLogger.m in Sources */,
+				70AB52EE1BA0A7EC008D50BF /* JFCommunicationLogger.m in Sources */,
 				70AB52C41BA0A214008D50BF /* ViewController.m in Sources */,
+				70AB52F31BA0AA04008D50BF /* NSDate+JFLogging.m in Sources */,
+				70AB52FA1BA328EF008D50BF /* JFEmailer.m in Sources */,
 				70AB52C11BA0A214008D50BF /* AppDelegate.m in Sources */,
 				70AB52BE1BA0A214008D50BF /* main.m in Sources */,
 			);

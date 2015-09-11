@@ -20,12 +20,12 @@ static dispatch_queue_t GTCommandFileLogging() {
 
 @interface JFFileLogger : NSObject
 
-- (id)initWithDirectory:(NSString *)directory andSeparator:(NSString *const)separator;
-- (void)log:(NSString *)logText;
-- (void)logThis:(NSString *)baseLog, ... NS_FORMAT_FUNCTION(1,2);
+- (id)initWithFileName:(NSString *)filename andSeparator:(NSString *const)separator withTimestamps:(BOOL)withTimestamps;
+- (void)log:(NSString *)baseLog, ... NS_FORMAT_FUNCTION(1,2);
 
 - (NSArray *)allLogs;
 - (NSArray *)latestLogs;
 - (void)truncateLog;
+- (NSString *)directory;
 - (void)writeQueued;
 @end

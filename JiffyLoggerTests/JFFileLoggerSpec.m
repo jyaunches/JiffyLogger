@@ -13,23 +13,30 @@
 
 SPEC_BEGIN(JFFileLoggerSpec)
     describe(@"JFFileLogger", ^{
-        it(@"should take format string and subsequent string arguments", ^{
-            NSMutableArray *stubQueue = [NSMutableArray array];
-            JFFileLogger *fileLogger = [[JFFileLogger alloc] initWithLogQueue:stubQueue];
-            [fileLogger logThis:@"Hey there: %@, %@", @"foo", @"bar"];
+        describe(@"log entry formatting", ^{
+            __block NSMutableArray *stubQueue;
+            __block JFFileLogger *fileLogger;
 
-            [[@([stubQueue count]) should] equal:@(1)];
-            [[[stubQueue firstObject] should] equal:@"Hey there: foo, bar"];
+            beforeEach(^{
+                stubQueue = [NSMutableArray array];
+                fileLogger = [[JFFileLogger alloc] initWithLogQueue:stubQueue];
+            });
+
+            it(@"should take format string and subsequent string arguments", ^{
+                [fileLogger log:@"Hey there: %@, %@", @"foo", @"bar"];
+
+                [[@([stubQueue count]) should] equal:@(1)];
+                [[[stubQueue firstObject] should] equal:@"Hey there: foo, bar"];
+            });
+
+            it(@"should take just a string without arguments", ^{
+                [fileLogger log:@"Hey there!"];
+
+                [[@([stubQueue count]) should] equal:@(1)];
+                [[[stubQueue firstObject] should] equal:@"Hey there!"];
+            });
         });
 
-        it(@"should take just a string without arguments", ^{
-            NSMutableArray *stubQueue = [NSMutableArray array];
-            JFFileLogger *fileLogger = [[JFFileLogger alloc] initWithLogQueue:stubQueue];
-            [fileLogger logThis:@"Hey there!"];
-
-            [[@([stubQueue count]) should] equal:@(1)];
-            [[[stubQueue firstObject] should] equal:@"Hey there!"];
-        });
     });
 
 SPEC_END
