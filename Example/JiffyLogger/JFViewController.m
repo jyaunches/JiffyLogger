@@ -7,6 +7,7 @@
 //
 
 #import "JFViewController.h"
+#import "JFLogsTableViewController.h"
 
 @interface JFViewController ()
 
@@ -17,13 +18,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)logEventClicked:(id)sender {
 }
 
+- (IBAction)viewLogsClicked:(id)sender {
+    JFLogsTableViewController *logsScreen = [[JFLogsTableViewController alloc] init];
+
+    [self.navigationController pushViewController:logsScreen animated:YES];
+}
 @end

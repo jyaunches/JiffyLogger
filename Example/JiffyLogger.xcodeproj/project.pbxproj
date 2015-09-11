@@ -15,6 +15,9 @@
 		6003F59E195388D20070C39A /* JFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* JFAppDelegate.m */; };
 		6003F5A7195388D20070C39A /* JFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* JFViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
+		707C673D1BA37A6C0055930C /* JFLogsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 707C673C1BA37A6C0055930C /* JFLogsTableViewController.m */; };
+		707C67401BA37DE40055930C /* JFLogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 707C673F1BA37DE40055930C /* JFLogTableViewCell.m */; };
+		707C67431BA381230055930C /* JFExpandableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 707C67421BA381230055930C /* JFExpandableLabel.m */; };
 		70B5C1A51BA3527800770486 /* JFCommunicationLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B5C1A41BA3527800770486 /* JFCommunicationLogger.m */; };
 		70D091AF1BA3585F006EE263 /* JFFileLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D091AD1BA3585F006EE263 /* JFFileLoggerSpec.m */; };
 		70D091B41BA35886006EE263 /* JFFileLogger+DependencyInjection.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D091B31BA35886006EE263 /* JFFileLogger+DependencyInjection.m */; };
@@ -54,6 +57,12 @@
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		648E6A68A4DCAF9D2715D27F /* Pods_JiffyLogger_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JiffyLogger_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		707C673B1BA37A6C0055930C /* JFLogsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFLogsTableViewController.h; sourceTree = "<group>"; };
+		707C673C1BA37A6C0055930C /* JFLogsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFLogsTableViewController.m; sourceTree = "<group>"; };
+		707C673E1BA37DE40055930C /* JFLogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFLogTableViewCell.h; sourceTree = "<group>"; };
+		707C673F1BA37DE40055930C /* JFLogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFLogTableViewCell.m; sourceTree = "<group>"; };
+		707C67411BA381230055930C /* JFExpandableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFExpandableLabel.h; sourceTree = "<group>"; };
+		707C67421BA381230055930C /* JFExpandableLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFExpandableLabel.m; sourceTree = "<group>"; };
 		70B5C1A31BA3527800770486 /* JFCommunicationLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFCommunicationLogger.h; sourceTree = "<group>"; };
 		70B5C1A41BA3527800770486 /* JFCommunicationLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFCommunicationLogger.m; sourceTree = "<group>"; };
 		70B5C1AE1BA3558600770486 /* JiffyLogger_Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JiffyLogger_Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +158,12 @@
 				6003F5A6195388D20070C39A /* JFViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				707C673B1BA37A6C0055930C /* JFLogsTableViewController.h */,
+				707C673C1BA37A6C0055930C /* JFLogsTableViewController.m */,
+				707C673E1BA37DE40055930C /* JFLogTableViewCell.h */,
+				707C673F1BA37DE40055930C /* JFLogTableViewCell.m */,
+				707C67411BA381230055930C /* JFExpandableLabel.h */,
+				707C67421BA381230055930C /* JFExpandableLabel.m */,
 			);
 			name = "Example for JiffyLogger";
 			path = JiffyLogger;
@@ -392,8 +407,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				70B5C1A51BA3527800770486 /* JFCommunicationLogger.m in Sources */,
+				707C673D1BA37A6C0055930C /* JFLogsTableViewController.m in Sources */,
 				6003F59E195388D20070C39A /* JFAppDelegate.m in Sources */,
+				707C67431BA381230055930C /* JFExpandableLabel.m in Sources */,
 				6003F5A7195388D20070C39A /* JFViewController.m in Sources */,
+				707C67401BA37DE40055930C /* JFLogTableViewCell.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
