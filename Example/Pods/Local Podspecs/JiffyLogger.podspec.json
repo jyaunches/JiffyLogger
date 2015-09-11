@@ -1,0 +1,30 @@
+{
+  "name": "JiffyLogger",
+  "version": "0.1.0",
+  "summary": "A short description of JiffyLogger.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/JiffyLogger",
+  "license": "MIT",
+  "authors": {
+    "jyaunches": "jmyaunch@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/JiffyLogger.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "JiffyLogger": [
+      "Pod/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "ObjectiveSugar": [
+
+    ]
+  }
+}

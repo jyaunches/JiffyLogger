@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'JiffyLogger_Example', :exclusive => true do
+  pod "JiffyLogger", :path => "../"
+end
+
+target 'JiffyLogger_Specs', :exclusive => true do
+  pod "JiffyLogger", :path => "../"
+  pod "Kiwi", git: "https://github.com/kiwi-bdd/Kiwi.git"
+end

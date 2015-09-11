@@ -1,0 +1,6 @@
+framework module JiffyLogger {
+  umbrella header "JiffyLogger-umbrella.h"
+
+  export *
+  module * { export * }
+}
