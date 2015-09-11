@@ -93,12 +93,13 @@ NSString *const LOG_DIRECTORY = @"jiffy_logs";
 }
 
 - (NSArray *)allLogs {
-    NSArray *logs = @[];
+    NSMutableArray *logs = [@[] mutableCopy];
     NSString *contentsOfLogFile = [NSString stringWithContentsOfFile:self.logFilePath encoding:NSUTF8StringEncoding error:nil];
-    if (contentsOfLogFile != nil) {
-        logs = [contentsOfLogFile split:self.separator];
+    if (contentsOfLogFile != nil && ![contentsOfLogFile isEqualToString:@""]) {
+        logs = [[[contentsOfLogFile split:self.separator] reverse] mutableCopy];
+        [logs removeObject:@""];
     }
-    return [logs reverse];
+    return logs;
 }
 
 - (void)writeQueued {

@@ -38,14 +38,46 @@ SPEC_BEGIN(JFFileLoggerSpec)
         });
         
         describe(@"writing to file", ^{
+            __block JFFileLogger *fileLogger;
+
+            beforeAll(^{
+                fileLogger = [[JFFileLogger alloc] initWithFileName:@"test-file.txt" andSeparator:@"\n" withTimestamps:NO];
+                [fileLogger truncateLog];
+                [fileLogger log:@"entry"];
+                [fileLogger writeQueued];
+            });
+            
+            
+            it(@"should write to log", ^{
+                sleep(1); //required because writeQueue is asynchronous
+                NSArray *entriesAfterWrite = [fileLogger latestLogs];
+                [[@(entriesAfterWrite.count) should] equal:@(1)];
+                [[entriesAfterWrite[0] should] equal:@"entry"];
+            });
+        });
+
+        describe(@"file creation/truncating", ^{
+            __block JFFileLogger *fileLogger;
+
+            beforeAll(^{
+                fileLogger = [[JFFileLogger alloc] initWithFileName:@"test-file.txt" andSeparator:@"\n" withTimestamps:NO];
+            });
+
             it(@"should create file on initialization", ^{
+                NSFileManager *fileManager = [NSFileManager defaultManager];
+                BOOL fileInFileSystem = [fileManager fileExistsAtPath:fileLogger.logFilePath isDirectory:nil];
+
+                [[@(fileInFileSystem) should] beTrue];
+            });
+
+            it(@"should truncate file", ^{
                 JFFileLogger *logger = [[JFFileLogger alloc] initWithFileName:@"test-file.txt" andSeparator:@"\n" withTimestamps:NO];
                 NSFileManager *fileManager = [NSFileManager defaultManager];
 
                 BOOL fileInFileSystem = [fileManager fileExistsAtPath:logger.logFilePath isDirectory:nil];
 
                 [[@(fileInFileSystem) should] beTrue];
-            });    
+            });
         });
 
     });
