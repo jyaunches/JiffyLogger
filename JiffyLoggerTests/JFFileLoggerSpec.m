@@ -35,6 +35,13 @@ SPEC_BEGIN(JFFileLoggerSpec)
                 [[@([stubQueue count]) should] equal:@(1)];
                 [[[stubQueue firstObject] should] equal:@"Hey there!"];
             });
+
+            it(@"should limit entry to 10 string parameters", ^{
+                [[theBlock(^{
+                    [fileLogger log:@"%@, %@, %@, %@, %@, %@, %@, %@, %@, %@, %@",
+                                    @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11"];
+                }) should] raise];
+            });
         });
         
         describe(@"file creation/writing/truncating", ^{

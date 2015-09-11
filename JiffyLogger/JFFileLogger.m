@@ -63,6 +63,9 @@ NSString *const LOG_DIRECTORY = @"jiffy_logs";
 
     NSString* theLog;
     if(theArgs.count > 0){
+        if (theArgs.count > 10 ) {
+            @throw [NSException exceptionWithName:NSRangeException reason:@"Maximum of 10 arguments allowed" userInfo:@{@"collection": theArgs}];
+        }
         NSArray* a = [theArgs arrayByAddingObjectsFromArray:@[@"X",@"X",@"X",@"X",@"X",@"X",@"X",@"X",@"X",@"X"]];
         theLog = [NSString stringWithFormat:firstArg, a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10] ];
     }else{
