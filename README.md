@@ -5,11 +5,13 @@
 [![License](https://img.shields.io/cocoapods/l/JiffyLogger.svg?style=flat)](http://cocoapods.org/pods/JiffyLogger)
 [![Platform](https://img.shields.io/cocoapods/p/JiffyLogger.svg?style=flat)](http://cocoapods.org/pods/JiffyLogger)
 
-## Usage
+JiffyLogger is a realtime logging utility that allows you to capture and view events while away from your development environment. It also provides the ability to export these logs via email at anytime.
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Ideal for field testing apps using CoreBluetooth with a connected peripheral.
 
 ## Requirements
+
+iOS 8+
 
 ## Installation
 
@@ -19,6 +21,10 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "JiffyLogger"
 ```
+
+## Example Project
+
+To run the example project, clone this repo, and run `pod install` from the Example directory first.
 
 ## Author
 
