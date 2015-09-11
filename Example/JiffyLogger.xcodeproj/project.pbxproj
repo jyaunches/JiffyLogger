@@ -263,6 +263,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = jyaunches;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = T34EE4GLT2;
+					};
 					70B5C1AD1BA3558600770486 = {
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = 6003F589195388D20070C39A;
@@ -527,9 +530,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JiffyLogger/JiffyLogger-Prefix.pch";
 				INFOPLIST_FILE = "JiffyLogger/JiffyLogger-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -542,9 +547,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JiffyLogger/JiffyLogger-Prefix.pch";
 				INFOPLIST_FILE = "JiffyLogger/JiffyLogger-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
