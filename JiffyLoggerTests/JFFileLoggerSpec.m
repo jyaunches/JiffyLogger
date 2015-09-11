@@ -37,30 +37,40 @@ SPEC_BEGIN(JFFileLoggerSpec)
             });
         });
         
-        describe(@"writing to file", ^{
+        describe(@"file creation/writing/truncating", ^{
             __block JFFileLogger *fileLogger;
 
             beforeAll(^{
                 fileLogger = [[JFFileLogger alloc] initWithFileName:@"test-file.txt" andSeparator:@"\n" withTimestamps:NO];
+            });
+            
+            it(@"should write to log", ^{
                 [fileLogger truncateLog];
                 [fileLogger log:@"entry"];
                 [fileLogger writeQueued];
-            });
-            
-            
-            it(@"should write to log", ^{
+
                 sleep(1); //required because writeQueue is asynchronous
                 NSArray *entriesAfterWrite = [fileLogger latestLogs];
                 [[@(entriesAfterWrite.count) should] equal:@(1)];
                 [[entriesAfterWrite[0] should] equal:@"entry"];
             });
-        });
 
-        describe(@"file creation/truncating", ^{
-            __block JFFileLogger *fileLogger;
+            it(@"should automatically write queued entries after 50", ^{
+                [fileLogger truncateLog];
+                [@(49) times:^{
+                    [fileLogger log:@"entry"];
+                }];
 
-            beforeAll(^{
-                fileLogger = [[JFFileLogger alloc] initWithFileName:@"test-file.txt" andSeparator:@"\n" withTimestamps:NO];
+                sleep(1); //required because writeQueue is asynchronous
+                NSArray *entriesAfterWrite = [fileLogger latestLogs];
+                [[@(entriesAfterWrite.count) should] equal:@(0)];
+
+                [fileLogger log:@"50th entry"];
+
+                sleep(1); //required because writeQueue is asynchronous
+                NSArray *entriesAfter50th = [fileLogger latestLogs];
+                [[@(entriesAfter50th.count) should] equal:@(50)];
+
             });
 
             it(@"should create file on initialization", ^{
