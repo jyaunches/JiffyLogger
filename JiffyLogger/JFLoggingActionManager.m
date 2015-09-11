@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 goTenna. All rights reserved.
 //
 
-#import "GTLoggingActionManager.h"
+#import "JFLoggingActionManager.h"
 #import "JFEmailer.h"
 
 @interface JFLoggingActionManager ()
