@@ -36,6 +36,17 @@ SPEC_BEGIN(JFFileLoggerSpec)
                 [[[stubQueue firstObject] should] equal:@"Hey there!"];
             });
         });
+        
+        describe(@"writing to file", ^{
+            it(@"should create file on initialization", ^{
+                JFFileLogger *logger = [[JFFileLogger alloc] initWithFileName:@"test-file.txt" andSeparator:@"\n" withTimestamps:NO];
+                NSFileManager *fileManager = [NSFileManager defaultManager];
+
+                BOOL fileInFileSystem = [fileManager fileExistsAtPath:logger.logFilePath isDirectory:nil];
+
+                [[@(fileInFileSystem) should] beTrue];
+            });    
+        });
 
     });
 

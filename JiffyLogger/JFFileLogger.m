@@ -34,8 +34,16 @@ NSString *const LOG_DIRECTORY = @"jiffy_logs";
 - (void)createLogFile {
     NSFileManager *fileManager = [NSFileManager defaultManager];
 
-    if(![fileManager fileExistsAtPath:self.directory isDirectory:nil]){
-        [fileManager createFileAtPath:self.directory contents:nil attributes:nil];
+    if(![fileManager fileExistsAtPath:[self directoryPath] isDirectory:nil]){
+        NSError *error;
+        [fileManager createDirectoryAtPath:[self directoryPath] withIntermediateDirectories:YES attributes:nil error:&error];
+        if(error){
+            NSLog(@"error creating directory");
+        }
+    }
+
+    if(![fileManager fileExistsAtPath:[self logFilePath] isDirectory:nil]){
+        [fileManager createFileAtPath:[self logFilePath] contents:nil attributes:nil];
     }
 }
 
@@ -76,7 +84,7 @@ NSString *const LOG_DIRECTORY = @"jiffy_logs";
 
 - (void)truncateLog {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    [fileManager removeItemAtPath:self.directory error:nil];
+    [fileManager removeItemAtPath:self.logFilePath error:nil];
     [self createLogFile];
 }
 
@@ -86,7 +94,7 @@ NSString *const LOG_DIRECTORY = @"jiffy_logs";
 
 - (NSArray *)allLogs {
     NSArray *logs = @[];
-    NSString *contentsOfLogFile = [NSString stringWithContentsOfFile:self.directory encoding:NSUTF8StringEncoding error:nil];
+    NSString *contentsOfLogFile = [NSString stringWithContentsOfFile:self.logFilePath encoding:NSUTF8StringEncoding error:nil];
     if (contentsOfLogFile != nil) {
         logs = [contentsOfLogFile split:self.separator];
     }
@@ -104,16 +112,20 @@ NSString *const LOG_DIRECTORY = @"jiffy_logs";
         
         NSData *data = [result dataUsingEncoding:NSUTF8StringEncoding];
 
-        NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:self.directory];
+        NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:self.logFilePath];
         [fileHandle seekToEndOfFile];
         [fileHandle writeData:data];
         [fileHandle closeFile];
     });
 }
 
-- (NSString *)directory{
+- (NSString *)directoryPath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = paths[0];
-    return [NSString stringWithFormat:@"%@/%@/%@", documentsDirectory, LOG_DIRECTORY, self.filename];
+    return [NSString stringWithFormat:@"%@/%@", documentsDirectory, LOG_DIRECTORY];
+}
+
+- (NSString *)logFilePath {
+    return [NSString stringWithFormat:@"%@/%@", [self directoryPath], self.filename];
 }
 @end
