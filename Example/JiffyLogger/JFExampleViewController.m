@@ -8,7 +8,8 @@
 
 #import <JiffyLogger/JFLogExportProtocol.h>
 #import <JiffyLogger/NSString+JFStrings.h>
-#import <JiffyLogger/JFLogsTableViewController.h>
+#import "JFLogsViewController.h"
+#import <ObjectiveSugar/NSNumber+ObjectiveSugar.h>
 #import "JFExampleViewController.h"
 #import "JFFileLogger+DependencyInjection.h"
 #import "JFCommunicationLogger.h"
@@ -26,14 +27,15 @@
 }
 
 - (IBAction)logEventClicked:(id)sender {
-    int randomLogLength = arc4random_uniform(200);
-    NSString *string = [NSString randomStringWithLength:randomLogLength];
-    [self.logger log:string];
+    [@(100) times:^{
+        int randomLogLength = arc4random_uniform(200);
+        NSString *string = [NSString randomStringWithLength:randomLogLength];
+        [self.logger log:string];
+    }];
 }
 
 - (IBAction)viewLogsClicked:(id)sender {
-    JFLogsTableViewController *logsScreen = [[JFLogsTableViewController alloc] initWithLogger:self.logger];
-
+    JFLogsViewController *logsScreen = [[JFLogsViewController alloc] initWithLogger:self.logger];
     [self.navigationController pushViewController:logsScreen animated:YES];
 }
 @end

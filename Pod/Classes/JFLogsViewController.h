@@ -10,7 +10,9 @@
 
 @class JFFileLogger;
 
-@interface JFLogsTableViewController : UITableViewController
+@interface JFLogsViewController : UIViewController
 
-- (id)initWithLogger:(JFFileLogger *)logger;
+@property(nonatomic, strong) UITextView *textScrollView;
+
+- (id)initWithLogger:(JFFileLogger <JFLogExportProtocol> *)logger;
 @end

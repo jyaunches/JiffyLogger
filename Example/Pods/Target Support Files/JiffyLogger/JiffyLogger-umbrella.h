@@ -5,7 +5,7 @@
 #import "JFFileLogger.h"
 #import "JFLogExportProtocol.h"
 #import "JFLoggingActionManager.h"
-#import "JFLogsTableViewController.h"
+#import "JFLogsViewController.h"
 #import "JFLogTableViewCell.h"
 #import "NSDate+JFLogging.h"
 #import "NSString+JFStrings.h"
