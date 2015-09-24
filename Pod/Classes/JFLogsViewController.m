@@ -37,15 +37,7 @@
     self.textScrollView.textColor = [UIColor whiteColor];
 
     [self.view addSubview:self.textScrollView];
-    CGFloat frameWidth = self.view.frame.size.width;
-
-    NSMutableString *divider = [@"" mutableCopy];
-    [@(frameWidth/41) times:^{
-        [divider appendString:@"----------"];
-    }];
-    NSString *logContent = [[self.logger allLogs] join:[NSString stringWithFormat:@"\n%@\n", divider]];
-
-    self.textScrollView.text = logContent;
+    [self reloadData];
     
 }
 
@@ -65,8 +57,16 @@
 
 - (void)reloadData {
     [self.logger writeQueued];
-    self.textScrollView = [[UITextView alloc] initWithFrame:self.view.frame];
-    self.textScrollView.text = [[self.logger allLogs] join:@"\n"];
+
+    CGFloat frameWidth = self.view.frame.size.width;
+
+    NSMutableString *divider = [@"" mutableCopy];
+    [@(frameWidth/41) times:^{
+        [divider appendString:@"----------"];
+    }];
+    NSString *logContent = [[self.logger allLogs] join:[NSString stringWithFormat:@"\n%@\n", divider]];
+
+    self.textScrollView.text = logContent;
 }
 
 @end
