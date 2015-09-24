@@ -9,28 +9,33 @@
 #import "JFLogsTableViewController.h"
 #import "JFLogTableViewCell.h"
 #import "JFExpandableLabel.h"
+#import "JFCommunicationLogger.h"
 
 NSString *LOG_TABLE_VIEW_CELL = @"LOG_TABLE_VIEW_CELL";
 
 @interface JFLogsTableViewController ()
 @property(nonatomic, strong) NSArray *logs;
+@property(nonatomic, strong) JFCommunicationLogger *logger;
 @end
 
 @implementation JFLogsTableViewController
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.logger = [JFCommunicationLogger shared];
+    [self.logger writeQueued];
 
     self.view.backgroundColor = [UIColor blackColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(action)];
     [self.tableView registerClass:[JFLogTableViewCell class] forCellReuseIdentifier:LOG_TABLE_VIEW_CELL];
-    self.logs = @[@"mary had a little lamb.. little lamb, little lamb. every where that mary went the lamb was sure to go.", @"entry 2"];
+    self.logs = [self.logger allLogs];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return self.logs.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

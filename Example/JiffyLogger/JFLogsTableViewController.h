@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class JFCommunicationLogger;
+
 @interface JFLogsTableViewController : UITableViewController
 
 @end
