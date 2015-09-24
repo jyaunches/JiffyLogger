@@ -8,7 +8,7 @@
 
 #import <JiffyLogger/JFLogExportProtocol.h>
 #import "JFViewController.h"
-#import "JFLogsTableViewController.h"
+#import <JiffyLogger/JFLogsTableViewController.h>
 #import "JFFileLogger+DependencyInjection.h"
 #import "JFCommunicationLogger.h"
 #import <JiffyLogger/NSString+JFStrings.h>
@@ -33,7 +33,7 @@
 }
 
 - (IBAction)viewLogsClicked:(id)sender {
-    JFLogsTableViewController *logsScreen = [[JFLogsTableViewController alloc] init];
+    JFLogsTableViewController *logsScreen = [[JFLogsTableViewController alloc] initWithLogger:self.logger];
 
     [self.navigationController pushViewController:logsScreen animated:YES];
 }

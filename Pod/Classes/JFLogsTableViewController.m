@@ -10,23 +10,26 @@
 #import "JFLogsTableViewController.h"
 #import "JFLogTableViewCell.h"
 #import "JFExpandableLabel.h"
-#import "JFCommunicationLogger.h"
+#import "JFFileLogger.h"
 
 NSString *LOG_TABLE_VIEW_CELL = @"LOG_TABLE_VIEW_CELL";
 
 @interface JFLogsTableViewController ()
 @property(nonatomic, strong) NSArray *logs;
-@property(nonatomic, strong) JFCommunicationLogger *logger;
+@property(nonatomic, strong) JFFileLogger *logger;
 @property(nonatomic, strong) id actionSheetManager;
 @end
 
 @implementation JFLogsTableViewController
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.logger writeQueued];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.logger = [JFCommunicationLogger shared];
-    [self.logger writeQueued];
 
     self.view.backgroundColor = [UIColor blackColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -34,6 +37,13 @@ NSString *LOG_TABLE_VIEW_CELL = @"LOG_TABLE_VIEW_CELL";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(action)];
     [self.tableView registerClass:[JFLogTableViewCell class] forCellReuseIdentifier:LOG_TABLE_VIEW_CELL];
     self.logs = [self.logger allLogs];
+}
+
+- (id)initWithLogger:(JFFileLogger *)logger {
+    self = [super init];
+    self.logger = logger;
+    [self.logger writeQueued];
+    return self;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
