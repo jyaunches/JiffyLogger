@@ -7,18 +7,17 @@
 //
 
 #import <JiffyLogger/JFLogExportProtocol.h>
-#import "JFViewController.h"
+#import <JiffyLogger/NSString+JFStrings.h>
 #import <JiffyLogger/JFLogsTableViewController.h>
+#import "JFExampleViewController.h"
 #import "JFFileLogger+DependencyInjection.h"
 #import "JFCommunicationLogger.h"
-#import <JiffyLogger/NSString+JFStrings.h>
 
-@interface JFViewController ()
-
+@interface JFExampleViewController ()
 @property(nonatomic, strong) JFCommunicationLogger *logger;
 @end
 
-@implementation JFViewController
+@implementation JFExampleViewController
 
 - (void)viewDidLoad
 {

@@ -13,7 +13,7 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* JFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* JFAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* JFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* JFViewController.m */; };
+		6003F5A7195388D20070C39A /* JFExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* JFExampleViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		70B5C1A51BA3527800770486 /* JFCommunicationLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B5C1A41BA3527800770486 /* JFCommunicationLogger.m */; };
 		70D091AF1BA3585F006EE263 /* JFFileLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D091AD1BA3585F006EE263 /* JFFileLoggerSpec.m */; };
@@ -49,8 +49,8 @@
 		6003F59B195388D20070C39A /* JiffyLogger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JiffyLogger-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* JFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* JFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* JFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* JFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFViewController.m; sourceTree = "<group>"; };
+		6003F5A5195388D20070C39A /* JFExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFExampleViewController.h; sourceTree = "<group>"; };
+		6003F5A6195388D20070C39A /* JFExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFExampleViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		648E6A68A4DCAF9D2715D27F /* Pods_JiffyLogger_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JiffyLogger_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,8 +145,8 @@
 				6003F59C195388D20070C39A /* JFAppDelegate.h */,
 				6003F59D195388D20070C39A /* JFAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* JFViewController.h */,
-				6003F5A6195388D20070C39A /* JFViewController.m */,
+				6003F5A5195388D20070C39A /* JFExampleViewController.h */,
+				6003F5A6195388D20070C39A /* JFExampleViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -396,7 +396,7 @@
 			files = (
 				70B5C1A51BA3527800770486 /* JFCommunicationLogger.m in Sources */,
 				6003F59E195388D20070C39A /* JFAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* JFViewController.m in Sources */,
+				6003F5A7195388D20070C39A /* JFExampleViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
