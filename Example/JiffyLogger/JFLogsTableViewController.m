@@ -6,6 +6,7 @@
 //  Copyright © 2015 jyaunches. All rights reserved.
 //
 
+#import <JiffyLogger/JFLoggingActionManager.h>
 #import "JFLogsTableViewController.h"
 #import "JFLogTableViewCell.h"
 #import "JFExpandableLabel.h"
@@ -16,6 +17,7 @@ NSString *LOG_TABLE_VIEW_CELL = @"LOG_TABLE_VIEW_CELL";
 @interface JFLogsTableViewController ()
 @property(nonatomic, strong) NSArray *logs;
 @property(nonatomic, strong) JFCommunicationLogger *logger;
+@property(nonatomic, strong) id actionSheetManager;
 @end
 
 @implementation JFLogsTableViewController
@@ -47,7 +49,16 @@ NSString *LOG_TABLE_VIEW_CELL = @"LOG_TABLE_VIEW_CELL";
 }
 
 - (void)action {
-    NSLog(@"action clicked");
+    self.actionSheetManager = [[JFLoggingActionManager alloc] initWithSource:self andLogger:self.logger onTruncate:^(){
+        [self reloadData];
+    }];
+    [self.actionSheetManager show];
+}
+
+- (void)reloadData {
+    [self.logger writeQueued];
+    self.logs = [self.logger latestLogs];
+    [self.tableView reloadData];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
