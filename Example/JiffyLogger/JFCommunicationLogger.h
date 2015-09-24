@@ -4,8 +4,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JFFileLogger.h"
-#import "JFLogExportProtocol.h"
+#import <JiffyLogger/JFFileLogger.h>
+#import <JiffyLogger/JFLogExportProtocol.h>
 
 @interface JFCommunicationLogger : JFFileLogger<JFLogExportProtocol>
 + (JFCommunicationLogger *)shared;

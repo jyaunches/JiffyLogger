@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 jyaunches. All rights reserved.
 //
 
-@import UIKit;
+@import UIKit;@class JFCommunicationLogger;
 
 @interface JFViewController : UIViewController
 

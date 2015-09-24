@@ -26,6 +26,9 @@ static dispatch_queue_t GTCommandFileLogging() {
 - (NSArray *)allLogs;
 - (NSArray *)latestLogs;
 - (void)truncateLog;
+
+- (NSString *)directoryPath;
+
 - (NSString *)logFilePath;
 - (void)writeQueued;
 @end

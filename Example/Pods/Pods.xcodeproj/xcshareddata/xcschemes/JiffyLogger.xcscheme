@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9EF11235F23B192F777BEB2F1A212CE0"
+               BlueprintIdentifier = "7DA2EC90CB7F3ABA2ADBCE19E936DF04"
                BuildableName = "JiffyLogger.framework"
                BlueprintName = "JiffyLogger"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -8,11 +8,12 @@
 
 #import "JFLoggingActionManager.h"
 #import "JFEmailer.h"
+#import "JFFileLogger.h"
 
 @interface JFLoggingActionManager ()
 @property(nonatomic, strong) UIViewController *source;
 @property(nonatomic, strong) JFEmailer *emailer;
-@property(nonatomic, weak) id<JFLogExportProtocol> logger;
+@property(nonatomic, weak) JFFileLogger<JFLogExportProtocol> *logger;
 @property(nonatomic, copy) void (^onTruncate)();
 @end
 
@@ -54,7 +55,7 @@
     }
     else if (buttonIndex == numberOfButtons - 3) {
         [self.logger writeQueued];
-        [self.emailer emailWithDocAttachment:[self.logger directory]
+        [self.emailer emailWithDocAttachment:[self.logger directoryPath]
                                      subject:[self.logger subject]
                                     fileName:[self.logger exportFilename]
                                     receiver:[self.logger logDestinationEmail]

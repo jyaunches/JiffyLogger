@@ -3,9 +3,7 @@
 // Copyright (c) 2015 goTenna. All rights reserved.
 //
 
-#import "JFFileLogger.h"
 #import "JFCommunicationLogger.h"
-#import "NSDate+JFLogging.h"
 
 NSString *const LOG_ENTRY_SEPARATOR_CHAR = @"%@$\n";
 
@@ -13,7 +11,9 @@ NSString *const LOG_ENTRY_SEPARATOR_CHAR = @"%@$\n";
 + (JFCommunicationLogger *)shared {
     static JFCommunicationLogger *logger = nil;
     if (!logger) {
-        logger = [[JFCommunicationLogger alloc] initWithFileName:@"jf-communication-logger" andSeparator:LOG_ENTRY_SEPARATOR_CHAR withTimestamps:YES];
+        logger = [[JFCommunicationLogger alloc] initWithFileName:@"jf-communication-logger"
+                                                    andSeparator:LOG_ENTRY_SEPARATOR_CHAR
+                                                  withTimestamps:YES];
     }
 
     return logger;

@@ -7,12 +7,8 @@
 //
 
 @protocol JFLogExportProtocol <NSObject>
--(NSString *)directory;
 -(NSString *)exportFilename;
 -(NSString *)subject;
-
--(void)truncateLog;
--(void)writeQueued;
 
 - (NSString *)logDestinationEmail;
 - (NSString *)messageBody;

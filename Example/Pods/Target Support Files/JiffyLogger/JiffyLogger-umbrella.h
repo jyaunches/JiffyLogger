@@ -5,6 +5,7 @@
 #import "JFLogExportProtocol.h"
 #import "JFLoggingActionManager.h"
 #import "NSDate+JFLogging.h"
+#import "NSString+JFStrings.h"
 
 FOUNDATION_EXPORT double JiffyLoggerVersionNumber;
 FOUNDATION_EXPORT const unsigned char JiffyLoggerVersionString[];
