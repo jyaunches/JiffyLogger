@@ -1,12 +1,10 @@
 #import <UIKit/UIKit.h>
 
 #import "JFEmailer.h"
-#import "JFExpandableLabel.h"
 #import "JFFileLogger.h"
 #import "JFLogExportProtocol.h"
 #import "JFLoggingActionManager.h"
 #import "JFLogsViewController.h"
-#import "JFLogTableViewCell.h"
 #import "NSDate+JFLogging.h"
 #import "NSString+JFStrings.h"
 
