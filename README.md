@@ -1,9 +1,6 @@
 # JiffyLogger
 
-[![CI Status](http://img.shields.io/travis/jyaunches/JiffyLogger.svg?style=flat)](https://travis-ci.org/jyaunches/JiffyLogger)
-[![Version](https://img.shields.io/cocoapods/v/JiffyLogger.svg?style=flat)](http://cocoapods.org/pods/JiffyLogger)
-[![License](https://img.shields.io/cocoapods/l/JiffyLogger.svg?style=flat)](http://cocoapods.org/pods/JiffyLogger)
-[![Platform](https://img.shields.io/cocoapods/p/JiffyLogger.svg?style=flat)](http://cocoapods.org/pods/JiffyLogger)
+[![CI Status](https://travis-ci.org/jyaunches/JiffyLogger.svg?branch=master)](https://travis-ci.org/jyaunches/JiffyLogger)
 
 JiffyLogger is a realtime logging utility that allows you to capture and view events while away from your development environment. It also provides the ability to export these logs via email at anytime.
 
@@ -28,7 +25,7 @@ To run the example project, clone this repo, and run `pod install` from the Exam
 
 ## Author
 
-jyaunches, jmyaunch@gmail.com
+Julie Yaunches, jmyaunch@gmail.com
 
 ## License
 
