@@ -9,17 +9,16 @@
 Pod::Spec.new do |s|
   s.name             = "JiffyLogger"
   s.version          = "0.1.0"
-  s.summary          = "A short description of JiffyLogger."
+  s.summary          = "JiffyLogger is a realtime log and log viewing utility."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
-  s.description      = <<-DESC
-                       DESC
+  s.description      = 'JiffyLogger allows you to capture and view events while away from your development environment.'
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/JiffyLogger"
+  s.homepage         = "https://github.com/jyaunches/JiffyLogger"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "jyaunches" => "jmyaunch@gmail.com" }

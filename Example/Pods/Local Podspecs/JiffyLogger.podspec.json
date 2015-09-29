@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "summary": "A short description of JiffyLogger.",
   "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/JiffyLogger",
+  "homepage": "https://github.com/jyaunches/JiffyLogger",
   "license": "MIT",
   "authors": {
     "jyaunches": "jmyaunch@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/JiffyLogger.git",
+    "git": "https://github.com/jyaunches/JiffyLogger.git",
     "tag": "0.1.0"
   },
   "platforms": {

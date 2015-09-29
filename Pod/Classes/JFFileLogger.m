@@ -19,6 +19,16 @@
 
 NSString *const LOG_DIRECTORY = @"jiffy_logs";
 
+static dispatch_queue_t GTCommandFileLogging() {
+    static dispatch_queue_t commandFileLogging;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        commandFileLogging = dispatch_queue_create("com.GT.GTCommandFileLogging", DISPATCH_QUEUE_SERIAL);
+    });
+
+    return commandFileLogging;
+}
+
 @implementation JFFileLogger
 
 - (id)initWithFileName:(NSString *)filename andSeparator:(NSString *const)separator withTimestamps:(BOOL)withTimestamps {
