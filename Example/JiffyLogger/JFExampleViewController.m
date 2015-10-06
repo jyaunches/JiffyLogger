@@ -8,8 +8,8 @@
 
 #import <JiffyLogger/JFLogExportProtocol.h>
 #import <JiffyLogger/NSString+JFStrings.h>
-#import "JFLogsViewController.h"
-#import <ObjectiveSugar/NSNumber+ObjectiveSugar.h>
+#import <JiffyLogger/JFLogsViewController.h>
+#import <ObjectiveSugar/ObjectiveSugar.h>
 #import "JFExampleViewController.h"
 #import "JFFileLogger+DependencyInjection.h"
 #import "JFCommunicationLogger.h"

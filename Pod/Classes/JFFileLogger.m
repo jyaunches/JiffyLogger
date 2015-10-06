@@ -12,12 +12,12 @@
 
 @interface JFFileLogger ()
 @property(nonatomic, strong) NSMutableArray *logQueue;
-@property(nonatomic, strong) NSString *const separator;
 @property(nonatomic) BOOL withTimestamps;
 @property(nonatomic, copy) NSString *filename;
 @end
 
 NSString *const LOG_DIRECTORY = @"jiffy_logs";
+NSString *const LOG_ENTRY_SEPARATOR_CHAR = @"%@$\n";
 
 static dispatch_queue_t GTCommandFileLogging() {
     static dispatch_queue_t commandFileLogging;
@@ -31,10 +31,9 @@ static dispatch_queue_t GTCommandFileLogging() {
 
 @implementation JFFileLogger
 
-- (id)initWithFileName:(NSString *)filename andSeparator:(NSString *const)separator withTimestamps:(BOOL)withTimestamps {
+- (id)initWithTimestamps:(BOOL)withTimestamps {
     self = [super init];
-    self.separator = separator;
-    self.filename = filename;
+    self.filename = [NSStringFromClass ([self class]) lowercaseString];
     self.logQueue = [NSMutableArray array];
     self.withTimestamps = withTimestamps;
     [self createLogFile];
@@ -107,9 +106,10 @@ static dispatch_queue_t GTCommandFileLogging() {
 
 - (NSArray *)allLogs {
     NSMutableArray *logs = [@[] mutableCopy];
-    NSString *contentsOfLogFile = [NSString stringWithContentsOfFile:self.logFilePath encoding:NSUTF8StringEncoding error:nil];
+    NSString *path = [self logFilePath];
+    NSString *contentsOfLogFile = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     if (contentsOfLogFile != nil && ![contentsOfLogFile isEqualToString:@""]) {
-        logs = [[[contentsOfLogFile split:self.separator] reverse] mutableCopy];
+        logs = [[[contentsOfLogFile split:LOG_ENTRY_SEPARATOR_CHAR] reverse] mutableCopy];
         [logs removeObject:@""];
     }
     return logs;
@@ -121,12 +121,12 @@ static dispatch_queue_t GTCommandFileLogging() {
     dispatch_async(GTCommandFileLogging(), ^{
         NSMutableString *result = [@"" mutableCopy];
         [logsToWrite each:^(NSString *logEntry) {
-            [result appendString:[NSString stringWithFormat:@"%@%@", logEntry, self.separator]];
+            [result appendString:[NSString stringWithFormat:@"%@%@", logEntry, LOG_ENTRY_SEPARATOR_CHAR]];
         }];
         
         NSData *data = [result dataUsingEncoding:NSUTF8StringEncoding];
 
-        NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:self.logFilePath];
+        NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:[self logFilePath]];
         [fileHandle seekToEndOfFile];
         [fileHandle writeData:data];
         [fileHandle closeFile];

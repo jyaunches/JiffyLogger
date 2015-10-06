@@ -10,7 +10,7 @@
 
 @interface JFFileLogger : NSObject
 
-- (id)initWithFileName:(NSString *)filename andSeparator:(NSString *const)separator withTimestamps:(BOOL)withTimestamps;
+- (id)initWithTimestamps:(BOOL)withTimestamps;
 - (void)log:(NSString *)baseLog, ... NS_FORMAT_FUNCTION(1,2);
 
 - (NSArray *)allLogs;

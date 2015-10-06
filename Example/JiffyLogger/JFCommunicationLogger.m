@@ -5,15 +5,11 @@
 
 #import "JFCommunicationLogger.h"
 
-NSString *const LOG_ENTRY_SEPARATOR_CHAR = @"%@$\n";
-
 @implementation JFCommunicationLogger
 + (JFCommunicationLogger *)shared {
     static JFCommunicationLogger *logger = nil;
     if (!logger) {
-        logger = [[JFCommunicationLogger alloc] initWithFileName:@"jf-communication-logger"
-                                                    andSeparator:LOG_ENTRY_SEPARATOR_CHAR
-                                                  withTimestamps:YES];
+        logger = [[JFCommunicationLogger alloc] initWithTimestamps:YES];
     }
 
     return logger;
@@ -38,7 +34,4 @@ NSString *const LOG_ENTRY_SEPARATOR_CHAR = @"%@$\n";
     return @"Email message content.";
 }
 
-- (NSArray *)latestFilteredLogs:(NSString *)text {
-    return nil;
-}
 @end
