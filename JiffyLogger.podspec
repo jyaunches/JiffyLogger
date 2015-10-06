@@ -1,7 +1,7 @@
 # Be sure to run `pod lib lint JiffyLogger.podspec' to ensure this is a
 Pod::Spec.new do |s|
   s.name             = "JiffyLogger"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "JiffyLogger is a realtime log and log viewing utility."
   s.description      = 'JiffyLogger allows you to capture and view events while away from your development environment.'
 
