@@ -8,11 +8,11 @@ Ideal for field testing apps using CoreBluetooth with a connected peripheral. Be
 
 ![Alt text](/ScreenShots/github-page-screenshots.png?raw=true "Example Usage")
 
-## Requirements
+### Requirements
 
 iOS 8+
 
-## Installation
+### Installation
 
 JiffyLogger is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -21,14 +21,16 @@ it, simply add the following line to your Podfile:
 pod "JiffyLogger"
 ```
 
-## Getting Started
+### Getting Started
 
-To run the example project, clone this repo, and run `pod install` from the Example directory first.
+[Quick Start Guide](https://github.com/jyaunches/JiffyLogger/wiki/Quick-Start-Guide)
 
-## Author
+### The Example App
 
-Julie Yaunches, jmyaunch@gmail.com
+This demonstrates the basic usecases of JiffyLogger. To run the example project, clone this repo, and run `pod install` from the Example directory. Then launch the project and run it in a simulator.
 
-## License
+### Author/License
+
+Author: Julie Yaunches, jmyaunch@gmail.com
 
 JiffyLogger is available under the MIT license. See the LICENSE file for more info.
