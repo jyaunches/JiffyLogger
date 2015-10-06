@@ -4,11 +4,9 @@
 
 JiffyLogger is a realtime logging utility that allows you to capture and view events while away from your development environment. It also provides the ability to export these logs via email at anytime.
 
-Ideal for field testing apps using CoreBluetooth with a connected peripheral.
+Ideal for field testing apps using CoreBluetooth with a connected peripheral. Below shows the screens/view controllers provided for in-app viewing of the logs and how exporting is incorportated.
 
-![Alt text](/ScreenShots/logs-screen.png?raw=true "Optional Title")
-![Alt text](/ScreenShots/export-button.png?raw=true "Optional Title")
-![Alt text](/ScreenShots/email-log-screen.png?raw=true "Optional Title")
+![Alt text](/ScreenShots/github-page-screenshots.png?raw=true "Example Usage")
 
 ## Requirements
 
