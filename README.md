@@ -29,8 +29,10 @@ pod "JiffyLogger"
 
 This demonstrates the basic usecases of JiffyLogger. To run the example project, clone this repo, and run `pod install` from the Example directory. Then launch the project and run it in a simulator.
 
-### Author/License
+### Author/License/Credit
 
 Author: Julie Yaunches, jmyaunch@gmail.com
 
 JiffyLogger is available under the MIT license. See the LICENSE file for more info.
+
+Credit: JiffyLogger was originally conceived while working on the integration of the [goTenna](http://gotenna.com) product into it's companion iOS application. It owes it's usecase and vision to this. For more on this, check out this [blog post](http://yaunch.io/jiffylogger-cocoapod-version-1/). 
