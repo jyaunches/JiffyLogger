@@ -55,7 +55,7 @@
     }
     else if (buttonIndex == numberOfButtons - 3) {
         [self.logger writeQueued];
-        [self.emailer emailWithDocAttachment:[self.logger directoryPath]
+        [self.emailer emailWithDocAttachment:[self.logger logFilePath]
                                      subject:[self.logger subject]
                                     fileName:[self.logger exportFilename]
                                     receiver:[self.logger logDestinationEmail]

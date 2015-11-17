@@ -10,4 +10,5 @@
 
 @interface NSString (JFStrings)
 +(NSString *) randomStringWithLength: (int) len;
+- (NSString *)substituteArguments:(NSMutableArray *)array;
 @end

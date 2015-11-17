@@ -18,6 +18,7 @@
 		70B5C1A51BA3527800770486 /* JFCommunicationLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B5C1A41BA3527800770486 /* JFCommunicationLogger.m */; };
 		70D091AF1BA3585F006EE263 /* JFFileLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D091AD1BA3585F006EE263 /* JFFileLoggerSpec.m */; };
 		70D091B41BA35886006EE263 /* JFFileLogger+DependencyInjection.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D091B31BA35886006EE263 /* JFFileLogger+DependencyInjection.m */; };
+		70F6B1F31BFBA71400F14FE6 /* JFStringsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F6B1F21BFBA71400F14FE6 /* JFStringsSpec.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		9834502827A3D6A445815EB5 /* Pods_JiffyLogger_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264F4B062EAA39CEA199470C /* Pods_JiffyLogger_Specs.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C61FBE0A252EBB8805A5590B /* Pods_JiffyLogger_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648E6A68A4DCAF9D2715D27F /* Pods_JiffyLogger_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -61,6 +62,7 @@
 		70D091AD1BA3585F006EE263 /* JFFileLoggerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFFileLoggerSpec.m; sourceTree = "<group>"; };
 		70D091B21BA35886006EE263 /* JFFileLogger+DependencyInjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "JFFileLogger+DependencyInjection.h"; path = "Helpers/JFFileLogger+DependencyInjection.h"; sourceTree = "<group>"; };
 		70D091B31BA35886006EE263 /* JFFileLogger+DependencyInjection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "JFFileLogger+DependencyInjection.m"; path = "Helpers/JFFileLogger+DependencyInjection.m"; sourceTree = "<group>"; };
+		70F6B1F21BFBA71400F14FE6 /* JFStringsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFStringsSpec.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A66AC0113005FD752A44D742 /* Pods_JiffyLogger_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JiffyLogger_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CD029CA2C31D8E9F51834F /* JiffyLogger.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JiffyLogger.podspec; path = ../JiffyLogger.podspec; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				70D091B11BA3587B006EE263 /* Helpers */,
 				70D091AD1BA3585F006EE263 /* JFFileLoggerSpec.m */,
 				70B5C1B21BA3558600770486 /* Info.plist */,
+				70F6B1F21BFBA71400F14FE6 /* JFStringsSpec.m */,
 			);
 			path = JiffyLogger_Specs;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F6B1F31BFBA71400F14FE6 /* JFStringsSpec.m in Sources */,
 				70D091B41BA35886006EE263 /* JFFileLogger+DependencyInjection.m in Sources */,
 				70D091AF1BA3585F006EE263 /* JFFileLoggerSpec.m in Sources */,
 			);
