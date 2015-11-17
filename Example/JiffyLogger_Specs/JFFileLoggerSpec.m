@@ -7,7 +7,7 @@
 //
 
 #import <ObjectiveSugar/ObjectiveSugar.h>
-#import "Kiwi.h"
+#import <Kiwi/Kiwi.h>
 #import <JiffyLogger/JFFileLogger.h>
 #import "JFFileLogger+DependencyInjection.h"
 

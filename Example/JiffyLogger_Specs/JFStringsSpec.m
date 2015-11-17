@@ -7,8 +7,7 @@
 //
 
 #import <ObjectiveSugar/ObjectiveSugar.h>
-#import "Kiwi.h"
-#import "NSString+JFStrings.h"
+#import <Kiwi/Kiwi.h>
 
 SPEC_BEGIN(JFStringsSpec)
 describe(@"JFStrings", ^{
@@ -16,4 +15,4 @@ describe(@"JFStrings", ^{
 });
 
 SPEC_END
-}
+
