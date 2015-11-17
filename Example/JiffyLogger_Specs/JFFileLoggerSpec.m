@@ -8,7 +8,7 @@
 
 #import <ObjectiveSugar/ObjectiveSugar.h>
 #import "Kiwi.h"
-#import "JFFileLogger.h"
+#import <JiffyLogger/JFFileLogger.h>
 #import "JFFileLogger+DependencyInjection.h"
 
 SPEC_BEGIN(JFFileLoggerSpec)
@@ -48,7 +48,7 @@ SPEC_BEGIN(JFFileLoggerSpec)
             __block JFFileLogger *fileLogger;
 
             beforeAll(^{
-                fileLogger = [[JFFileLogger alloc] initWithFileName:@"test-file.txt" andSeparator:@"\n" withTimestamps:NO];
+                fileLogger = [[JFFileLogger alloc] initWithTimestamps:NO];
             });
             
             it(@"should write to log", ^{
@@ -88,7 +88,7 @@ SPEC_BEGIN(JFFileLoggerSpec)
             });
 
             it(@"should truncate file", ^{
-                JFFileLogger *logger = [[JFFileLogger alloc] initWithFileName:@"test-file.txt" andSeparator:@"\n" withTimestamps:NO];
+                JFFileLogger *logger = [[JFFileLogger alloc] initWithTimestamps:NO];
                 NSFileManager *fileManager = [NSFileManager defaultManager];
 
                 BOOL fileInFileSystem = [fileManager fileExistsAtPath:logger.logFilePath isDirectory:nil];

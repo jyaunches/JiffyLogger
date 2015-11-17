@@ -4,13 +4,15 @@
 
 JiffyLogger is a realtime logging utility that allows you to capture and view events while away from your development environment. It also provides the ability to export these logs via email at anytime.
 
-Ideal for field testing apps using CoreBluetooth with a connected peripheral.
+Ideal for field testing apps using CoreBluetooth with a connected peripheral. Below shows the screens/view controllers provided for in-app viewing of the logs and how exporting is incorportated.
 
-## Requirements
+![Alt text](/ScreenShots/github-page-screenshots.png?raw=true "Example Usage")
+
+### Requirements
 
 iOS 8+
 
-## Installation
+### Installation
 
 JiffyLogger is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -19,14 +21,18 @@ it, simply add the following line to your Podfile:
 pod "JiffyLogger"
 ```
 
-## Example Project
+### Getting Started
 
-To run the example project, clone this repo, and run `pod install` from the Example directory first.
+[Quick Start Guide](https://github.com/jyaunches/JiffyLogger/wiki/Quick-Start-Guide)
 
-## Author
+### The Example App
 
-Julie Yaunches, jmyaunch@gmail.com
+This demonstrates the basic usecases of JiffyLogger. To run the example project, clone this repo, and run `pod install` from the Example directory. Then launch the project and run it in a simulator.
 
-## License
+### Author/License/Credit
+
+Author: Julie Yaunches, jmyaunch@gmail.com
 
 JiffyLogger is available under the MIT license. See the LICENSE file for more info.
+
+Credit: JiffyLogger was originally conceived while working on the integration of the [goTenna](http://gotenna.com) product into it's companion iOS application. It owes it's usecase and vision to this. For more on this, check out this [blog post](http://yaunch.io/jiffylogger-cocoapod-version-1/). 
