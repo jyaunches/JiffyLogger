@@ -1,5 +1,5 @@
 PODS:
-  - JiffyLogger (0.1.0):
+  - JiffyLogger (1.0.2):
     - ObjectiveSugar
   - Kiwi (2.4.0)
   - ObjectiveSugar (1.1.0)
@@ -20,7 +20,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/kiwi-bdd/Kiwi.git
 
 SPEC CHECKSUMS:
-  JiffyLogger: 8d3781ed6bf6786977568ef3a571dc0680bf9e38
+  JiffyLogger: df48cfa7d82a6dc3191617516739f5032366fdf8
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
   ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
 

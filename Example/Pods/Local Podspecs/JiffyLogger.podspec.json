@@ -1,8 +1,8 @@
 {
   "name": "JiffyLogger",
-  "version": "0.1.0",
-  "summary": "A short description of JiffyLogger.",
-  "description": "",
+  "version": "1.0.2",
+  "summary": "JiffyLogger is a realtime log and log viewing utility.",
+  "description": "JiffyLogger allows you to capture and view events while away from your development environment.",
   "homepage": "https://github.com/jyaunches/JiffyLogger",
   "license": "MIT",
   "authors": {
@@ -10,10 +10,10 @@
   },
   "source": {
     "git": "https://github.com/jyaunches/JiffyLogger.git",
-    "tag": "0.1.0"
+    "tag": "1.0.2"
   },
   "platforms": {
-    "ios": "7.0"
+    "ios": "8.0"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
