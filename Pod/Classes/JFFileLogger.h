@@ -13,8 +13,10 @@
 - (id)initWithTimestamps:(BOOL)withTimestamps;
 - (void)log:(NSString *)baseLog, ... NS_FORMAT_FUNCTION(1,2);
 
+- (void)singleLog:(NSString *)baseLog;
 - (NSArray *)allLogs;
 - (NSArray *)latestLogs;
+
 - (void)truncateLog;
 
 - (NSString *)directoryPath;
@@ -22,3 +24,4 @@
 - (NSString *)logFilePath;
 - (void)writeQueued;
 @end
+

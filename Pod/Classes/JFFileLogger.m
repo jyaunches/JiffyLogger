@@ -9,12 +9,12 @@
 #import <ObjectiveSugar/ObjectiveSugar.h>
 #import "JFFileLogger.h"
 #import "NSDate+JFLogging.h"
-#import "NSString+JFStrings.h"
 
 @interface JFFileLogger ()
 @property(nonatomic, strong) NSMutableArray *logQueue;
 @property(nonatomic) BOOL withTimestamps;
 @property(nonatomic, copy) NSString *filename;
+@property(nonatomic) BOOL autoWrite;
 @end
 
 NSString *const LOG_DIRECTORY = @"jiffy_logs";
@@ -24,7 +24,7 @@ static dispatch_queue_t GTCommandFileLogging() {
     static dispatch_queue_t commandFileLogging;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        commandFileLogging = dispatch_queue_create("com.JL.JLFileLogging", DISPATCH_QUEUE_SERIAL);
+        commandFileLogging = dispatch_queue_create("com.GT.GTCommandFileLogging", DISPATCH_QUEUE_SERIAL);
     });
 
     return commandFileLogging;
@@ -36,6 +36,7 @@ static dispatch_queue_t GTCommandFileLogging() {
     self = [super init];
     self.filename = [NSStringFromClass ([self class]) lowercaseString];
     self.logQueue = [NSMutableArray array];
+    self.autoWrite = false;
     self.withTimestamps = withTimestamps;
     [self createLogFile];
     return self;
@@ -56,6 +57,18 @@ static dispatch_queue_t GTCommandFileLogging() {
         [fileManager createFileAtPath:[self logFilePath] contents:nil attributes:nil];
     }
 }
+- (void)singleLog:(NSString *)baseLog  {
+    NSString* theLog = baseLog;
+    if(self.withTimestamps){
+       theLog = [NSString stringWithFormat:@"%@ - %@", [NSDate nowForLogs], theLog];
+    }
+
+    [self.logQueue addObject:theLog];
+
+    if ((self.logQueue.count >= 50) || (self.autoWrite)) {
+        [self writeQueued];
+    }
+}
 
 - (void)log:(NSString *)firstArg, ...{
     NSMutableArray *theArgs = [NSMutableArray array];
@@ -70,9 +83,19 @@ static dispatch_queue_t GTCommandFileLogging() {
         NSString *arg = va_arg(args, NSString*);
         [theArgs addObject:[arg copy]];
     }
-    va_end(args);
 
-    NSString* theLog = [firstArg substituteArguments:theArgs];
+    NSString* theLog;
+    if(theArgs.count > 0){
+        if (theArgs.count > 10 ) {
+            @throw [NSException exceptionWithName:NSRangeException reason:@"Maximum of 10 arguments allowed" userInfo:@{@"collection": theArgs}];
+        }
+        NSArray* a = [theArgs arrayByAddingObjectsFromArray:@[@"X",@"X",@"X",@"X",@"X",@"X",@"X",@"X",@"X",@"X"]];
+        theLog = [NSString stringWithFormat:firstArg, a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10] ];
+    }else{
+        theLog = firstArg;
+    }
+
+    va_end(args);
 
     if(self.withTimestamps){
         theLog = [NSString stringWithFormat:@"%@ - %@", [NSDate nowForLogs], theLog];
